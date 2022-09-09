@@ -64,6 +64,8 @@ export class WeatherReportComponent implements OnInit {
       this.invalidMobile = false;
       return
     }
+    this.invalidCity = false;
+    this.invalidMobile = false;
     this.showButton = true
     this.allData = [];
     this.tableData = [];
@@ -82,6 +84,7 @@ export class WeatherReportComponent implements OnInit {
         this.invalidCity = false;
         this.showChart = false;
         this.form.controls['city'].disable();
+        this.form.controls['mobileNumber'].disable();
         this.params.temperature = res.data.Temp.temperature;
         this.chartLabel = res.data.Temp.city + COMMON.TEMPERATURE
          var date = new Date();
@@ -112,7 +115,7 @@ export class WeatherReportComponent implements OnInit {
 
   //Multiple API calls handled here
   invokeMultipleCall() {
-    this.intervalSubscription = interval(60000).pipe(take(1)).subscribe({next:() => {
+    this.intervalSubscription = interval(60000).pipe(take(9)).subscribe({next:() => {
       this.weatherService.getWeather(this.params).subscribe( (res: any) => {
         var date = new Date();
         this.params.temperature = res.data.Temp.temperature;
@@ -125,6 +128,8 @@ export class WeatherReportComponent implements OnInit {
 
          }
       }, error => {
+        this.form.controls['city'].enable()
+        this.form.controls['mobileNumber'].enable()
         this.invalidMobile = true;
         this.errorMessage = error.error.error.message
         this.tableData = [ { name: res.data.Temp.city, createdAt:date, temperature: res.data.Temp.temperature, smsData:error.error.error.message   }]
