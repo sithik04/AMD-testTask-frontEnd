@@ -22,6 +22,8 @@ export class WeatherReportComponent implements OnInit {
   public disableMobile: boolean = false;
   public showChart: boolean = false;
   public errorMessage: String = "";
+  public cityErrorMessage: String = "";
+
 
   public params: any = {};
   public tableData: any = [];
@@ -51,6 +53,7 @@ export class WeatherReportComponent implements OnInit {
       this.invalidMobile = true;
       this.showChart = false;
       this.errorMessage = COMMON.MOBILE_NUMBER_TEXT;
+      this.cityErrorMessage = COMMON.CITY_TEXT
       return
     } else if(!this.form.controls['mobileNumber'].value) {
       this.invalidMobile = true;
@@ -62,6 +65,7 @@ export class WeatherReportComponent implements OnInit {
       this.invalidCity = true;
       this.showChart = false;
       this.invalidMobile = false;
+      this.cityErrorMessage = COMMON.CITY_TEXT
       return
     }
     this.invalidCity = false;
@@ -80,6 +84,7 @@ export class WeatherReportComponent implements OnInit {
        this.invalidCity = true;
        this.showButton = false;
        this.showChart = false;
+       this.cityErrorMessage = COMMON.CITY_NOT_FOUND;
        } else {
         this.invalidCity = false;
         this.showChart = false;

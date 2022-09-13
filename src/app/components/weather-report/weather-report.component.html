@@ -15,7 +15,7 @@
                   <img src="../../../assets/images/clear-input.svg" width="15" height="15" alt="">
                 </button>
               </div>
-              <span class="validation_error">Please add a valid city</span>
+              <span class="validation_error">{{cityErrorMessage}}</span>
             </div>
 
             <div [ngClass] = "invalidMobile ? 'invalid' : ''" class="d-block input_group">
