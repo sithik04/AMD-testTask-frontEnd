@@ -1,19 +1,13 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "6f7dbeb4-9ccf-48e3-a209-ada3693e2cfa"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "weather-app": {
+    "weather": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
       },
       "root": "",
@@ -23,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/weather-app",
+            "outputPath": "dist/weather",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -35,7 +29,8 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss"            ],
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -75,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "weather-app:build:production"
+              "browserTarget": "weather:build:production"
             },
             "development": {
-              "browserTarget": "weather-app:build:development"
+              "browserTarget": "weather:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "weather-app:build"
+            "browserTarget": "weather:build"
           }
         },
         "test": {
@@ -110,5 +105,7 @@
       }
     }
   },
-  "defaultProject": "weather-app"
+  "cli": {
+    "analytics": "99520ed0-40de-47e4-9d0c-2e9cf48042ed"
+  }
 }
