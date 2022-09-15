@@ -1,0 +1,44 @@
+<div class="main-body">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-center flex-column">
+        <div class="login_form">
+          <div class="brand_logo">
+            <img src="../../../assets/images/Logos.svg" width="340" height="" alt="">
+          </div>
+          <h2>Please fill in the fields below</h2>
+          <form class="login_input_form" [formGroup]="form" >
+            <div [ngClass] = "invalidCity ? 'invalid' : ''" class="d-block input_group">
+              <label for="city">City</label>
+              <div class="position-relative">
+                <input type="text" formControlName="city" [alphaOnly]="true"/>
+                <button class="invalid_clear" (click)="clearCity()">
+                  <img src="../../../assets/images/clear-input.svg" width="15" height="15" alt="">
+                </button>
+              </div>
+              <span class="validation_error">{{cityErrorMessage}}</span>
+            </div>
+
+            <div [ngClass] = "invalidMobile ? 'invalid' : ''" class="d-block input_group">
+              <label for="city">Mobile Number</label>
+              <div class="position-relative">
+                <input type="text" formControlName="mobileNumber" [OnlyNumber]="true" />
+                <button class="invalid_clear" (click)="clearMobileNumber()">
+                  <img src="../../../assets/images/clear-input.svg" width="15" height="15" alt="">
+                </button>
+              </div>
+              <span class="validation_error">{{errorMessage}}</span>
+            </div>
+            <span *ngIf="!invalidMobile" class="mobile-info">Please add a country code before mobile number</span>
+
+          </form>
+
+          <div>
+            <button type="button" class="login_submit" [ngClass] ="showButton ? 'hide_button' : ''" [disabled] = "showButton" (click)="onSubmit()">Submit</button>
+          </div>
+        </div>
+
+        <app-line-chart *ngIf="showChart" [allData]="allData" [chartLabel] = "chartLabel"></app-line-chart>
+        <app-table-view *ngIf="tableData.length > 0" [tableData]="tableData"></app-table-view>
+    </div>
+  </div>
+</div>

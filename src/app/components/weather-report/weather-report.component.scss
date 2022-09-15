@@ -1,0 +1,113 @@
+.main-body{
+  padding-top:140px;
+  padding-bottom:32px;
+
+  .login_form{
+    width:340px;
+
+    .brand_logo{
+      margin-bottom: 32px;
+    }
+
+    h2{
+      font-size: 18px;
+      font-weight: 700;
+      line-height:27px;
+      color:#4A4B4D;
+      margin-bottom:16px;
+    }
+
+    .info_text{
+      font-size: 12px;
+      font-weight:400;
+      line-height:16px;
+      color:#4D4F5C;
+    }
+
+    .login_submit{
+      display: block;
+      width:100%;
+      border:none;
+      outline:none;
+      padding:16px 32px;
+      font-size: 14px;
+      font-weight:400;
+      line-height:140%;
+      background:#43425D;
+      border-radius:4px;
+      height:48px;
+      color:#fff;
+      margin-top:32px;
+    }
+     .hide_button {
+      background-color: #A1A1A1;
+      border-radius:4px;
+      color:#fff;
+     }
+    .login_input_form{
+
+      .input_group{
+        label{
+          font-size: 12px;
+          line-height:16px;
+          font-weight:400;
+          color:#1C1D1F;
+          margin-bottom:8px;
+          display:block;
+        }
+        input{
+          outline:none;
+          padding:10px 8px;
+          height:40px;
+          border:1px solid #D1D1D2;
+          border-radius:4px;
+          width:100%;
+        }
+
+        .validation_error,
+        .invalid_clear{
+          display:none;
+          font-size: 12px
+        }
+
+        &.invalid{
+          input{
+            border:1px solid #fb6868 !important
+          }
+          .validation_error{
+            font-size: 12px;
+            line-height:16px;
+            color:#fb6868;
+            font-weight:400;
+            margin-top:4px;
+            display: block;
+          }
+          .invalid_clear{
+            display:block;
+            outline:none;
+            border:none;
+            background:transparent;
+            color:#fb6868;
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            right:10px;
+          }
+        }
+
+        &:first-child{
+          margin-bottom:16px;
+        }
+      }
+    }
+  }
+}
+.mobile-info{
+  font-size: 12px;
+  line-height:16px;
+  font-weight:400;
+  color:#1C1D1F;
+  margin-bottom:8px;
+  display:block;
+  margin-top: 4px;
+}
