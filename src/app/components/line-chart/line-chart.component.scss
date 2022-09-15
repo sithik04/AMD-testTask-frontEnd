@@ -36,3 +36,16 @@
     }
   }
 }
+
+
+@media (max-width:768px){
+  .canvas_container{
+    width:100% !important;
+
+    canvas{
+      width:100% !important;
+      height:auto;
+      max-height:100%;
+    }
+  }
+}

@@ -111,3 +111,18 @@
   display:block;
   margin-top: 4px;
 }
+
+
+@media(max-width:576px){
+  .main-body{
+
+    .login_form{
+      width:100%;
+      .brand_logo{
+        img{
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

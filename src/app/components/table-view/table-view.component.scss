@@ -23,3 +23,17 @@
 
    }
 }
+
+
+@media (max-width:768px){
+  .table_list{
+    width: 100%;
+    max-width: 100%;
+    overflow:auto !important;
+
+     table{
+      table-layout:auto;
+      min-width: 500px;
+     }
+  }
+}
